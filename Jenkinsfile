@@ -4,13 +4,14 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/champakjoshi14-wq/jenkins.git'
+                git branch: 'main',
+                    url: 'https://github.com/champakjoshi14-wq/jenkins.git'
             }
         }
 
         stage('Run Python Script') {
             steps {
-                sh 'python3 main.py'
+                bat 'python main.py'
             }
         }
     }
